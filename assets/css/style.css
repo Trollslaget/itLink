@@ -111,8 +111,10 @@ h6 {
 
 #header .logo img {
   padding: 0;
-  margin: 0;
+  margin-bottom: 10px;
+  margin-right: 6px;
   max-height: 40px;
+  max-width: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -1485,6 +1487,51 @@ section {
   100% {
     transform: rotate(360deg);
   }
+}
+.contact .copying {
+	cursor: pointer;
+}
+.popup {
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	width: fit-content;
+	bottom: 5vh;
+	left: 50%;
+	transform: translate(-50%, -20px);
+	background-color: white;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 5px;
+	padding: 10px;
+  padding-top: 17px;
+	transition: 0.5s ease-in-out all;
+}
+.popup.active {
+	animation: copyPopup 1s ease forwards;
+}
+
+@keyframes copyPopup {
+	0% {
+		opacity: 0;
+		pointer-events: none;
+		transform: translate(-50%, -20px);
+	}
+	40% {
+		opacity: 1;
+		pointer-events: all;
+		transform: translate(-50%, 0);
+	}
+	80% {
+		opacity: 1;
+		pointer-events: all;
+		transform: translate(-50%, 0);
+	}
+	100% {
+		opacity: 0;
+		pointer-events: none;
+		transform: translate(-50%, -20px);
+	}
 }
 
 /*--------------------------------------------------------------
